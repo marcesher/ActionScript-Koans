@@ -32,6 +32,22 @@ package koans
 			trace( 'Runs after every single test' )
 		}
 
+		public function a_note_on_TestCase_and_Test_order() : void
+		{
+			/*
+			I'm using TestCase and Test ordering here so that tests are run
+			in 'learning order'.
+
+			When you write tests for your applications, in general you should not
+			concern yourself with test order, except in rare cases.
+
+			See here for more: http://docs.flexunit.org/index.php?title=Order
+			*/
+
+			var orderingTestsIsFrownedUpon : Boolean = true
+			assertTrue( orderingTestsIsFrownedUpon )
+		}
+
 		[Test( order = 1 )]
 		public function fill_in_the_expected_value_to_get_the_test_to_pass() : void
 		{
