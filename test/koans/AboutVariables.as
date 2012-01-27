@@ -2,6 +2,7 @@ package koans
 {
 	import as3.DemonstrateVariableAccess;
 	import as3.DemonstrateVariableAccessChild;
+	import as3.DemonstrateVariableAccessPackage;
 
 	import org.flexunit.asserts.*;
 	import org.hamcrest.assertThat;
@@ -58,11 +59,14 @@ package koans
 		{
 			var parent : DemonstrateVariableAccess = new DemonstrateVariableAccess()
 			var child : DemonstrateVariableAccessChild = new DemonstrateVariableAccessChild()
+			var neighbor : DemonstrateVariableAccessPackage = new DemonstrateVariableAccessPackage()
 
 			assertThat( parent.aPublicVar, equalTo( FILL_ME_IN ))
 			assertThat( child.aPublicVar, equalTo( FILL_ME_IN ))
 			assertThat( child.getProtectedVariable(), equalTo( FILL_ME_IN ))
 			assertThat( child.getParentPrivateVariable(), startsWith( FILL_ME_IN ))
+			assertThat( neighbor.getInternalVariableFromNeighbor(), equalTo( FILL_ME_IN ))
+			assertThat( neighbor.getProtectedVariableFromNeighbor(), startsWith( FILL_ME_IN ))
 		}
 
 		private const I_AM_MODIFIABLE : Boolean = false;
